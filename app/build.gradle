@@ -38,4 +38,6 @@ dependencies {
     compile 'com.github.navasmdc:MaterialDesign:1.5@aar'
     compile 'com.github.paolorotolo:appintro:3.2.0'
     compile 'com.github.techfreak:wizardpager:1.0.0'
+
+    compile 'com.mcxiaoke.volley:library:1.0.19'
 }
