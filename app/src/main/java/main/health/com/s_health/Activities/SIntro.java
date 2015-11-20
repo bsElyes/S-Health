@@ -24,7 +24,7 @@ public class SIntro extends AppIntro {
     }
 
     private void loadMainActivity(){
-        Intent i = new Intent(this,MainActivity.class);
+        Intent i = new Intent(this,Authentification.class);
         startActivity(i);
     }
 

@@ -17,11 +17,11 @@ import main.health.com.s_health.R;
 
 public class Scan extends Fragment {
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v= inflater.inflate(R.layout.fragment_scan, container, false);
+
 
         Button btn =(Button) v.findViewById(R.id.btnScan);
         btn.setOnClickListener(new View.OnClickListener() {
@@ -36,7 +36,6 @@ public class Scan extends Fragment {
                 integrator.initiateScan(IntentIntegrator.PRODUCT_CODE_TYPES);
             }
         });
-
         return v;
     }
 
@@ -47,12 +46,30 @@ public class Scan extends Fragment {
             String contents = result.getContents();
             if (contents != null) {
                 Toast.makeText(getActivity(), result.toString(), Toast.LENGTH_LONG).show();
-                TextView textView  =(TextView) getActivity().findViewById(R.id.Hello);
+                TextView textView  =(TextView) getActivity().findViewById(R.id.mdLabel);
                 textView.setText(result.toString());
+
             } else {
                 Toast.makeText(getActivity(),"Error",Toast.LENGTH_LONG).show();
 
             }
         }
     }
+
+   /* private void initCards(){
+        ArrayList<Card> cards = new ArrayList<Card>();
+        Card card = new Card(getActivity());
+        card.setTitle("Bye");
+        CardHeader header = new CardHeader(getActivity());
+        header.setTitle("Hello");
+        card.addCardHeader(header);
+        cards.add(card);
+
+        CardArrayAdapter mCardArrayAdapter = new CardArrayAdapter(getActivity(),cards);
+        CardListView listView = (CardListView) getActivity().findViewById(R.id.myList);
+        if (listView!=null){
+            listView.setAdapter(mCardArrayAdapter);
+        }
+
+    }*/
 }

@@ -40,10 +40,18 @@ public class Authentification extends AppCompatActivity {
             }
         });
 
-        Button actionButton = (Button) findViewById(R.id.action_button);
-        actionButton.setOnClickListener(new View.OnClickListener() {
+        Button loginBtn = (Button) findViewById(R.id.action_button);
+        loginBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 login();
+            }
+        });
+
+        Button signinBtn = (Button) findViewById(R.id.action_button_signin);
+        signinBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                signin();
             }
         });
 
@@ -97,5 +105,11 @@ public class Authentification extends AppCompatActivity {
             }
         });
     }
+
+    private void signin(){
+        Intent i = new Intent(this,SignUpActivity.class);
+        startActivity(i);
+    }
+
     }
 
